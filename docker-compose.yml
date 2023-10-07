@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres: 
+    container_name: compartilhe-seu-esporte-pg
+    image: bitnami/postgresql
+    ports:
+      - 5430:5432
+    environment:
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: sport
+      POSTGRESQL_DATABASE: compartilhe-seu-esporte
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
